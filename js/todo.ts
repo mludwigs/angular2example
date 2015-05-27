@@ -1,6 +1,7 @@
 /// <reference path="../typings/angular2/angular2.d.ts" />
 
-import {Component, View, bootstrap, For, If} from "angular2/angular2"
+import {Component, View, bootstrap, For, If} from "angular2/angular2";
+import {HTTP} from "js/httpService";
 
 @Component({
 	selector: "todo-list"
@@ -30,6 +31,8 @@ class TodoList {
 
 	addTodo(todo: string) {
 		this.todos.push(todo);
+		
+		var http = new HTTP("GET").get("hello");
 	}
 
 	doneTyping($event) {
