@@ -32,7 +32,10 @@ class TodoList {
 	addTodo(todo: string) {
 		this.todos.push(todo);
 		
-		var http = new HTTP("GET").get("hello");
+		var http = new HTTP("GET").get("/js/data.json", function callback (res) {
+			console.log("from callbackk");
+			console.log(res);
+		});
 	}
 
 	doneTyping($event) {
